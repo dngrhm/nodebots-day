@@ -98,6 +98,23 @@ board.on("ready", function() {
     'q': exit
   };
 
+  if(process.env.SWITCH_FWD_REV === 'yes') {
+    var keyMap = {
+      'v': left_fwd,
+      'f': left_stop,
+      'r': left_rev,
+      'm': right_fwd,
+      'j': right_stop,
+      'u': right_rev,
+      'down': forward,
+      'up': reverse,
+      'left': left,
+      'right': right,
+      'space': stop,
+      'q': exit
+    };
+  }
+
   var stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.resume();
