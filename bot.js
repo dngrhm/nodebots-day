@@ -100,12 +100,12 @@ board.on("ready", function() {
 
   if(process.env.SWITCH_FWD_REV === 'yes') {
     var keyMap = {
-      'v': left_fwd,
-      'f': left_stop,
-      'r': left_rev,
-      'm': right_fwd,
-      'j': right_stop,
-      'u': right_rev,
+      'm': left_fwd,
+      'j': left_stop,
+      'u': left_rev,
+      'v': right_fwd,
+      'f': right_stop,
+      'r': right_rev,
       'down': forward,
       'up': reverse,
       'left': left,
