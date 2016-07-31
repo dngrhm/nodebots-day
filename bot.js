@@ -3,8 +3,8 @@ var Particle = require("particle-io");
 
 var board = new five.Board({
   io: new Particle({
-    token: '8c461c53e385172408e430ff2be8a4919b0d232a',
-    deviceName: 'nodebots5'
+    token: process.env.PARTICLE_TOKEN,
+    deviceName: process.env.NODEBOT_NAME
   })
 });
 
@@ -33,13 +33,37 @@ board.on("ready", function() {
     rightWheel.rev(speed);
   }
 
+  function left_rev() {
+    leftWheel.rev(speed);
+  }
+
+  function right_rev() {
+    rightWheel.rev(speed);
+  }
+
   function forward() {
     leftWheel.fwd(speed);
     rightWheel.fwd(speed);
   }
 
+  function left_fwd() {
+    leftWheel.fwd(speed);
+  }
+
+  function right_fwd() {
+    rightWheel.fwd(speed);
+  }
+
   function stop() {
     leftWheel.stop();
+    rightWheel.stop();
+  }
+
+  function left_stop() {
+    leftWheel.stop();
+  }
+
+  function right_stop() {
     rightWheel.stop();
   }
 
@@ -60,6 +84,12 @@ board.on("ready", function() {
   }
 
   var keyMap = {
+    'r': left_fwd,
+    'f': left_stop,
+    'v': left_rev,
+    'u': right_fwd,
+    'j': right_stop,
+    'm': right_rev,
     'up': forward,
     'down': reverse,
     'left': left,

@@ -4,8 +4,8 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js",
-    "test": "node diag.js"
+    "start": ". ./set_env.sh; node bot.js",
+    "test": ". ./set_env.sh; node diag.js"
   },
   "author": "",
   "license": "MIT",
@@ -13,4 +13,4 @@
     "johnny-five": "^0.9.58",
     "particle-io": "^0.12.0"
   }
-}
+ }
